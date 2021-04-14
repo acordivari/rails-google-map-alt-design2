@@ -14,14 +14,13 @@
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
-        <th>Phone Number</th>
-        <th>Name</th>
         <th>Address</th>
+        <th>Name</th>
+        <th>Pronouns</th>
+        <th>Phone Number</th>
         <th>Latitude</th>
         <th>Longitude</th>
-        <th>Pronouns</th>
         <th>Delivery Instructions</th>
-        <th>Notes</th>
 
         <th></th>
 
@@ -31,14 +30,13 @@
     <tbody>
       <% @stops.each do |stop| %>
         <%= content_tag :tr, id: dom_id(stop), class: dom_class(stop) do %>
-          <td><%= stop.name %></td>
-          <td><%= stop.delivery_instructions %></td>
-          <td><%= stop.phone_number %></td>
           <td><%= stop.address %></td>
+          <td><%= stop.name %></td>
+          <td><%= stop.pronouns %></td>
+          <td><%= stop.phone_number %></td>
           <td><%= stop.latitude %></td>
           <td><%= stop.longitude %></td>
-          <td><%= stop.pronouns %></td>
-          <td><%= stop.notes %></td>
+          <td><%= stop.delivery_instructions %></td>
 
           <td><%= link_to 'Show', stop %></td>
 
