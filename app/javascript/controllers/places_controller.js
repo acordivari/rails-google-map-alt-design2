@@ -11,8 +11,8 @@ export default class extends Controller {
 
   initMap() {
     this.map = new google.maps.Map(this.mapTarget, {
-      center: new google.maps.LatLng(this.data.get("latitude") || 37.7, this.data.get("longitude") || -122.4),
-      zoom: (this.data.get("latitude") == null ? 4 : 15)
+      center: new google.maps.LatLng(this.data.get("latitude") || 37.72, this.data.get("longitude") || -122.45),
+      zoom: (this.data.get("latitude") == null ? 11 : 15)
     })
 
     this.autocomplete = new google.maps.places.Autocomplete(this.fieldTarget)
@@ -38,7 +38,7 @@ export default class extends Controller {
       this.map.fitBounds(place.geometry.viewport)
     } else {
       this.map.setCenter(place.geometry.location)
-      this.map.setZoom(17)
+      this.map.setZoom(25)
     }
 
     this.marker.setPosition(place.geometry.location)
