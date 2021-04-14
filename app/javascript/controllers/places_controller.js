@@ -11,7 +11,7 @@ export default class extends Controller {
 
   initMap() {
     this.map = new google.maps.Map(this.mapTarget, {
-      center: new google.maps.LatLng(this.data.get("latitude") || 39.5, this.data.get("longitude") || -98.35),
+      center: new google.maps.LatLng(this.data.get("latitude") || 37.7, this.data.get("longitude") || -122.4),
       zoom: (this.data.get("latitude") == null ? 4 : 15)
     })
 

@@ -1,16 +1,12 @@
 <div class="page-header">
-  <%= link_to @trip.name, @trip, class: 'btn btn-default' %>
-  <%= link_to edit_trip_stop_path(@trip, @stop), class: 'btn btn-primary' do %>
-    Edit
-  <% end %>
+
   <h1>Show stop</h1>
 </div>
 
 <dl class="dl-horizontal">
-  <dt>Position:</dt>
-  <dd><%= @stop.position %></dd>
 
   <dt>Address:</dt>
+
   <dd><%= @stop.address %></dd>
 
   <dt>Latitude:</dt>
@@ -19,10 +15,13 @@
   <dt>Longitude:</dt>
   <dd><%= @stop.longitude %></dd>
 
-  <dt>Arrival date:</dt>
-  <dd><%= @stop.arrival_date %></dd>
+  <dt>Delivery Instructions:</dt>
+  <dd><%= @stop.delivery_instructions %></dd>
 
-  <dt>Notes:</dt>
-  <dd><%= @stop.notes %></dd>
+  <dt>Pronouns:</dt>
+  <dd><%= @stop.pronouns %></dd>
+
+  <dt>Phone Number:</dt>
+  <dd><%= @stop.phone_number %></dd>
 
 </dl>

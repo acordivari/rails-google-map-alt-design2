@@ -1,15 +1,17 @@
 class StopsController < ApplicationController
 
-  before_action :set_stop, only: [:show, :edit, :update, :destroy]
+  # before_action :set_stop, only: [:show, :edit, :update, :destroy]
 
   # GET /stops
   # GET /stops.json
   def index
+    @stops = Stop.all
   end
 
   # GET /stops/1
   # GET /stops/1.json
   def show
+    @stop = Stop.find_by_id(params[:id])
   end
 
   # GET /stops/new
@@ -28,6 +30,7 @@ class StopsController < ApplicationController
 
     respond_to do |format|
       if @stop.save
+        format.html { redirect_to stop_path(@stop), notice: 'Stop was successfully updated.' }
         format.json { render :show, status: :created, location: @stop }
       else
         format.html { render :new }
@@ -58,6 +61,6 @@ class StopsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def stop_params
-      params.require(:stop).permit(:position, :address, :latitude, :longitude, :arrival_date, :notes)
+      params.require(:stop).permit(:pronouns, :name, :address, :latitude, :longitude, :delivery_instructions, :notes, :phone_number)
     end
 end
