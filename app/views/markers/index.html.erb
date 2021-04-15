@@ -1,0 +1,17 @@
+<h2>Hello World</h2>
+<p>
+  The time is now: <%= Time.now %>
+</p>
+
+<div>
+  <% @markers.each do |marker| %>
+    <%= content_tag :tr, id: dom_id(marker), class: dom_class(marker) do %>
+      <td><%= marker.address %></td>
+      <td><%= marker.latitude %></td>
+      <td><%= marker.longitude %></td>
+
+      <td><%= link_to 'Show', marker %></td>
+
+    <% end %>
+  <% end %>
+</div>

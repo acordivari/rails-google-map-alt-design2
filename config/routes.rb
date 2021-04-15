@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  resources :markers
   resources :stops
 
   get '/privacy', to: 'home#privacy'
