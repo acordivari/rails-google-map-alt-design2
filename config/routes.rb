@@ -2,6 +2,8 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do
 
+  root 'welcome#index'
+
   resources :stops
 
   get '/privacy', to: 'home#privacy'
